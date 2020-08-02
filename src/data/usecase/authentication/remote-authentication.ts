@@ -2,7 +2,7 @@ import { HttpPostClient } from '@/data/protocols/http/http-post-client'
 import { AuthenticationParams } from '@/domain/usecases/authentication'
 import { HttpStatusCode } from '@/data/protocols/http/http-response'
 import { InvalidCredationsError } from '@/domain/errors/invalid-credations-error'
-import { UnexpectedError } from '@/domain/errors/unexpected-error copy'
+import { UnexpectedError } from '@/domain/errors/unexpected-error'
 import { AccountModel } from '@/domain/models/account-model'
 
 export class RemoteAuthentication {
