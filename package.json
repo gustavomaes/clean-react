@@ -11,6 +11,9 @@
   },
   "author": "Gustavo <gustavo.maes@fullbar.com.br>",
   "license": "MIT",
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/faker": "^4.1.12",
@@ -18,6 +21,7 @@
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.0",
@@ -47,6 +51,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
   }
 }
