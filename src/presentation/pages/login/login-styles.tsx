@@ -116,8 +116,3 @@ export const Error = styled.span`
   margin-top: 32px;
   color: #bc477b;
 `
-
-export const Footer = styled.footer`
-  background-color: #880e4f;
-  height: 48px;
-`

@@ -3,7 +3,6 @@ import {
   GlobalStyle,
   Container,
   Form,
-  Footer,
   Input,
   Button,
   Subtitle,
@@ -15,6 +14,7 @@ import {
 } from './login-styles'
 import Spinner from '@/presentation/components/spinner/spinner'
 import LoginHeader from '@/presentation/components/login-header/login-header'
+import Footer from '@/presentation/components/footer/footer'
 
 const Login: React.FC = () => {
   return (
