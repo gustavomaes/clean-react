@@ -8,5 +8,5 @@ export const Container = styled.div`
 
 export const Error = styled.span`
   margin-top: 32px;
-  color: #bc477b;
+  color: ${p => p.theme.colors.primaryLight};
 `

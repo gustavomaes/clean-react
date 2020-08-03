@@ -8,7 +8,7 @@ export const Container = styled.div`
 `
 
 export const Subtitle = styled.h1`
-  color: #560027;
+  color: ${p => p.theme.colors.primaryDark};
   text-align: center;
   font-size: 20px;
   text-transform: uppercase;
@@ -19,8 +19,8 @@ type ButtonProps = {
 }
 
 export const Button = styled.button<ButtonProps>`
-  background-color: #880e4f;
-  color: white;
+  background-color: ${p => p.theme.colors.primary};
+  color: ${p => p.theme.colors.white};
   border-radius: 8px;
   font-size: 16px;
   border: none;
@@ -35,7 +35,7 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   width: 400px;
-  background-color: white;
+  background-color: ${p => p.theme.colors.white};
   padding: 40px;
   border-radius: 8px;
   align-self: center;
@@ -44,7 +44,7 @@ export const Form = styled.div`
 
 export const Link = styled.span`
   text-align: center;
-  color: #880e4f;
+  color: ${p => p.theme.colors.primary};
   text-transform: lowercase;
   margin-top: 16px;
   cursor: pointer;

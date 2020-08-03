@@ -1,11 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-
-// white: #fff,
-// black: #000,
-// background: #f2f2f2,
-// primary: #880e4f,
-// primaryDark: #560027,
-// primaryLight: #bc477b
+import theme from './theme'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -18,6 +12,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     /* change to p.theme.background */
-    background-color: #f2f2f2;
+    background-color: ${theme.colors.background};
   }
 `

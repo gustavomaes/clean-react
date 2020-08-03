@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const InputField = styled.input`
-  border: 1px solid #bc477b;
+  border: 1px solid ${p => p.theme.colors.primaryLight};
   line-height: 40px;
   border-radius: 4px;
   padding: 0 40px 0 8px;
   &:focus {
-    outline: #bc477b;
+    outline: ${p => p.theme.colors.primaryLight};
   };
 `
 

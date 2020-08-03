@@ -44,7 +44,7 @@ export const SpinnerWrapper = styled.div<Props>`
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #bc477b;
+    background: ${p => p.theme.colors.primaryLight};
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
     &:nth-child(1) {
