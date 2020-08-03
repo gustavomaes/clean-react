@@ -5,14 +5,12 @@ import {
   Form,
   Button,
   Subtitle,
-  Link,
-  ErrorWrapper,
-  Error
+  Link
 } from './login-styles'
-import Spinner from '@/presentation/components/spinner/spinner'
 import LoginHeader from '@/presentation/components/login-header/login-header'
 import Footer from '@/presentation/components/footer/footer'
 import Input from '@/presentation/components/input/input'
+import FormStatus from '@/presentation/components/form-status/form-status'
 
 const Login: React.FC = () => {
   return (
@@ -25,10 +23,7 @@ const Login: React.FC = () => {
         <Input type="password" name="password" placeholder="Digite sua senha"/>
         <Button marginTop type="submit">Entrar</Button>
         <Link>Criar conta</Link>
-        <ErrorWrapper>
-          <Spinner marginTop />
-          <Error>erro</Error>
-        </ErrorWrapper>
+        <FormStatus />
       </Form>
       <Footer />
     </Container>

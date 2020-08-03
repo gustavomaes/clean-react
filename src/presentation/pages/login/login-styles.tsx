@@ -75,15 +75,3 @@ export const Link = styled.span`
     text-decoration: underline;
   }
 `
-
-export const ErrorWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* margin-top: 32px;  */
-  align-items: center;
-`
-
-export const Error = styled.span`
-  margin-top: 32px;
-  color: #bc477b;
-`
