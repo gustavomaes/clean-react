@@ -2,10 +2,8 @@ import React from 'react'
 import {
   GlobalStyle,
   Container,
-  Header,
   Form,
   Footer,
-  Title,
   Input,
   Button,
   Subtitle,
@@ -16,17 +14,13 @@ import {
   Error
 } from './login-styles'
 import Spinner from '@/presentation/components/spinner/spinner'
-import Logo from '@/presentation/components/logo/logo'
+import LoginHeader from '@/presentation/components/login-header/login-header'
 
 const Login: React.FC = () => {
   return (
     <Container>
       <GlobalStyle />
-      <Header>
-        <Logo />
-        <Title>4Dev - Enquetes</Title>
-
-      </Header>
+      <LoginHeader />
       <Form>
         <Subtitle>Login</Subtitle>
         <InputWrapper>

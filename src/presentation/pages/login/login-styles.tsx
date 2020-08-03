@@ -29,19 +29,6 @@ export const Container = styled.div`
   justify-content: space-between;
 `
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  background-color: #880e4f;
-  border-top: 40px solid #560027;
-  align-items: center;
-`
-
-export const Title = styled.h1`
-  color: white;
-  margin: 16px 0 40px;
-`
-
 export const Subtitle = styled.h1`
   color: #560027;
   text-align: center;
