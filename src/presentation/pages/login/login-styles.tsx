@@ -36,16 +36,6 @@ export const Subtitle = styled.h1`
   text-transform: uppercase;
 `
 
-export const Input = styled.input`
-  border: 1px solid #bc477b;
-  line-height: 40px;
-  border-radius: 4px;
-  padding: 0 40px 0 8px;
-  &:focus {
-    outline: #bc477b;
-  };
-`
-
 type ButtonProps = {
   marginTop?: boolean
 }
@@ -72,25 +62,6 @@ export const Form = styled.div`
   border-radius: 8px;
   align-self: center;
   box-shadow: 0 1px 3px -1px #000;
-`
-
-export const InputWrapper = styled.div`
-  margin-top: 16px;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  align-items: center;
-
-  ${Input} {
-    flex-grow: 1;
-  };
-`
-
-export const Status = styled.span`
-  position: absolute;
-  right: 8px; 
-  font-size: 12px;
-  cursor: help;
 `
 
 export const Link = styled.span`

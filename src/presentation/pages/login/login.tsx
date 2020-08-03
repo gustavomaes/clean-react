@@ -3,11 +3,8 @@ import {
   GlobalStyle,
   Container,
   Form,
-  Input,
   Button,
   Subtitle,
-  InputWrapper,
-  Status,
   Link,
   ErrorWrapper,
   Error
@@ -15,6 +12,7 @@ import {
 import Spinner from '@/presentation/components/spinner/spinner'
 import LoginHeader from '@/presentation/components/login-header/login-header'
 import Footer from '@/presentation/components/footer/footer'
+import Input from '@/presentation/components/input/input'
 
 const Login: React.FC = () => {
   return (
@@ -23,14 +21,8 @@ const Login: React.FC = () => {
       <LoginHeader />
       <Form>
         <Subtitle>Login</Subtitle>
-        <InputWrapper>
-          <Input type="email" name="email" placeholder="Digite seu e-mail"/>
-          <Status>🔴</Status>
-        </InputWrapper>
-        <InputWrapper>
-          <Input type="password" name="password" placeholder="Digite sua senha"/>
-          <Status>🔴</Status>
-        </InputWrapper>
+        <Input type="email" name="email" placeholder="Digite seu e-mail"/>
+        <Input type="password" name="password" placeholder="Digite sua senha"/>
         <Button marginTop type="submit">Entrar</Button>
         <Link>Criar conta</Link>
         <ErrorWrapper>
