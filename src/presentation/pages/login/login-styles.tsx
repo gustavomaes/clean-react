@@ -37,10 +37,6 @@ export const Header = styled.header`
   align-items: center;
 `
 
-export const Image = styled.img`
-  margin-top: 40px;
-`
-
 export const Title = styled.h1`
   color: white;
   margin: 16px 0 40px;
