@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  GlobalStyle,
   Container,
   Form,
   Button,
@@ -12,7 +11,6 @@ import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/component
 const Login: React.FC = () => {
   return (
     <Container>
-      <GlobalStyle />
       <LoginHeader />
       <Form>
         <Subtitle>Login</Subtitle>
