@@ -29,6 +29,13 @@ export const Button = styled.button<ButtonProps>`
   &:hover {
     opacity: 0.9;
   };
+  &:disabled {
+    background-color: ${p => p.theme.colors.disabledBackground};
+    color: ${p => p.theme.colors.disabledColor};
+    &:hover {
+      opacity: 1;
+    };
+  }
 `
 
 export const Form = styled.div`
