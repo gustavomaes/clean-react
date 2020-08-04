@@ -11,10 +11,12 @@ const renderComponent: any = () => (
 )
 
 describe('Login Component', () => {
-  test('should not render Spinner and Error on start', () => {
+  test('should start with initial state', () => {
     const { getByTestId } = render(renderComponent())
     const errorContainer = getByTestId('error-container')
-    console.log(errorContainer)
     expect(errorContainer.childElementCount).toBe(0)
+
+    const submitButton = getByTestId('submit-button') as HTMLButtonElement
+    expect(submitButton.disabled).toBe(true)
   })
 })
