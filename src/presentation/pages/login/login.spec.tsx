@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, RenderResult } from '@testing-library/react'
 import Login from './login'
 import { ThemeProvider } from 'styled-components'
 import theme from '@/presentation/styles/theme'
@@ -10,9 +10,21 @@ const renderComponent: any = () => (
   </ThemeProvider>
 )
 
+type SutTypes = {
+  sut: RenderResult
+}
+
+const makeSut = (): SutTypes => {
+  const sut = render(renderComponent())
+
+  return {
+    sut
+  }
+}
+
 describe('Login Component', () => {
   test('should start with initial state', () => {
-    const { getByTestId } = render(renderComponent())
+    const { sut: { getByTestId } } = makeSut()
     const errorContainer = getByTestId('error-container')
     expect(errorContainer.childElementCount).toBe(0)
 
