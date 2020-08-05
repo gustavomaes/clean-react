@@ -1,28 +1,40 @@
 import React from 'react'
-import { render, RenderResult } from '@testing-library/react'
-import Login from './login'
+import { render, RenderResult, cleanup, fireEvent } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
+import Login from './login'
 import theme from '@/presentation/styles/theme'
-
-const renderComponent: any = () => (
-  <ThemeProvider theme={theme}>
-    <Login />
-  </ThemeProvider>
-)
+import { Validation } from '@/presentation/protocols/validation'
 
 type SutTypes = {
   sut: RenderResult
+  validationSpy: ValidationSpy
+}
+
+class ValidationSpy implements Validation {
+  errorMessage: string
+  input: object
+
+  validate (input: object): string {
+    this.input = input
+    return this.errorMessage
+  }
 }
 
 const makeSut = (): SutTypes => {
-  const sut = render(renderComponent())
+  const validationSpy = new ValidationSpy()
+  const sut = render(
+    <ThemeProvider theme={theme}>
+      <Login validation={validationSpy }/>
+    </ThemeProvider>
+  )
 
   return {
-    sut
+    sut, validationSpy
   }
 }
 
 describe('Login Component', () => {
+  afterEach(cleanup)
   test('should start with initial state', () => {
     const { sut: { getByTestId } } = makeSut()
     const errorContainer = getByTestId('error-container')
@@ -38,5 +50,14 @@ describe('Login Component', () => {
     const passwordStatus = getByTestId('password-status')
     expect(passwordStatus.title).toBe('Campo obrigatório')
     expect(passwordStatus.textContent).toBe('🔴')
+  })
+
+  test('should call Validation with correct email', () => {
+    const { sut: { getByTestId }, validationSpy } = makeSut()
+    const emailInput = getByTestId('email')
+    fireEvent.input(emailInput, { target: { value: 'any_email' } })
+    expect(validationSpy.input).toEqual({
+      email: 'any_email'
+    })
   })
 })
