@@ -20,10 +20,10 @@ const Input: React.FC<InputProps> = ({ type, name, placeholder }: InputProps) =>
   }
 
   const getStatus = (): string => {
-    return '🔴'
+    return error ? '🔴' : '🟢'
   }
   const getTitle = (): string => {
-    return error
+    return error || 'Campo preenchido corretamente.'
   }
 
   return (
