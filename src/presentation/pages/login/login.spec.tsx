@@ -3,23 +3,11 @@ import { render, RenderResult, cleanup, fireEvent } from '@testing-library/react
 import { ThemeProvider } from 'styled-components'
 import Login from './login'
 import theme from '@/presentation/styles/theme'
-import { Validation } from '@/presentation/protocols/validation'
+import { ValidationSpy } from '@/presentation/components/test'
 
 type SutTypes = {
   sut: RenderResult
   validationSpy: ValidationSpy
-}
-
-class ValidationSpy implements Validation {
-  errorMessage: string
-  fieldName: string
-  fieldValue: string
-
-  validate (fieldName: string, fieldValue: string): string {
-    this.fieldName = fieldName
-    this.fieldValue = fieldValue
-    return this.errorMessage
-  }
 }
 
 const makeSut = (): SutTypes => {
