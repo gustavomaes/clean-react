@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import Login from './login'
 import theme from '@/presentation/styles/theme'
 import { ValidationSpy } from '@/presentation/components/test'
+import faker from 'faker'
 
 type SutTypes = {
   sut: RenderResult
@@ -45,16 +46,18 @@ describe('Login Component', () => {
   test('should call Validation with correct email', () => {
     const { sut: { getByTestId }, validationSpy } = makeSut()
     const emailInput = getByTestId('email')
-    fireEvent.input(emailInput, { target: { value: 'any_email' } })
+    const email = faker.internet.email()
+    fireEvent.input(emailInput, { target: { value: email } })
     expect(validationSpy.fieldName).toBe('email')
-    expect(validationSpy.fieldValue).toBe('any_email')
+    expect(validationSpy.fieldValue).toBe(email)
   })
 
   test('should call Validation with correct password', () => {
     const { sut: { getByTestId }, validationSpy } = makeSut()
     const passwordInput = getByTestId('password')
-    fireEvent.input(passwordInput, { target: { value: 'any_password' } })
+    const password = faker.internet.password()
+    fireEvent.input(passwordInput, { target: { value: password } })
     expect(validationSpy.fieldName).toBe('password')
-    expect(validationSpy.fieldValue).toBe('any_password')
+    expect(validationSpy.fieldValue).toBe(password)
   })
 })
