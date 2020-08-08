@@ -4,19 +4,7 @@ import { render, RenderResult, cleanup, fireEvent } from '@testing-library/react
 import { ThemeProvider } from 'styled-components'
 import Login from './login'
 import theme from '@/presentation/styles/theme'
-import { ValidationStub } from '@/presentation/components/test'
-import { Authentication, AuthenticationParams } from '@/domain/usecases'
-import { AccountModel } from '@/domain/models'
-import { mockAccountModel } from '@/domain/test'
-
-class AuthenticationSpy implements Authentication {
-  account = mockAccountModel()
-  params: AuthenticationParams
-  async auth (params: AuthenticationParams): Promise<AccountModel> {
-    this.params = params
-    return Promise.resolve(this.account)
-  }
-}
+import { ValidationStub, AuthenticationSpy } from '@/presentation/components/test'
 
 type SutTypes = {
   sut: RenderResult
