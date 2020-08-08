@@ -10,7 +10,7 @@ const FormStatus: React.FC = () => {
   return (
     <Container data-testid="error-container">
       {isLoading && <Spinner marginTop />}
-      {mainError && <Error>{mainError}</Error>}
+      {mainError && <Error data-testid="main-error">{mainError}</Error>}
     </Container>
   )
 }
