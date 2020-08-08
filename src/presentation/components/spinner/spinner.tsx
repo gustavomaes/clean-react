@@ -6,7 +6,7 @@ type SpinnerProps = {
 }
 
 const Spinner: React.FC<SpinnerProps> = ({ marginTop }: SpinnerProps) => (
-  <SpinnerWrapper marginTop={marginTop}>
+  <SpinnerWrapper data-testid="spinner" marginTop={marginTop}>
     <div /><div /><div /><div />
   </SpinnerWrapper>
 )
