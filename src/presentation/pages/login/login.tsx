@@ -40,7 +40,7 @@ const Login: React.FC<Props> = ({ validation }: Props) => {
           <Subtitle>Login</Subtitle>
           <Input type="email" name="email" placeholder="Digite seu e-mail"/>
           <Input type="password" name="password" placeholder="Digite sua senha"/>
-          <Button data-testid="submit-button" disabled marginTop type="submit">Entrar</Button>
+          <Button data-testid="submit-button" disabled={!!state.emailError || !!state.passwordError} marginTop type="submit">Entrar</Button>
           <Link>Criar conta</Link>
           <FormStatus />
         </Form>
