@@ -4,7 +4,7 @@ import {
   Form,
   Button,
   Subtitle,
-  Link
+  LinkPage
 } from './login-styles'
 import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
@@ -63,7 +63,7 @@ const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
           <Input type="email" name="email" placeholder="Digite seu e-mail"/>
           <Input type="password" name="password" placeholder="Digite sua senha"/>
           <Button data-testid="submit" disabled={!!state.emailError || !!state.passwordError} marginTop type="submit">Entrar</Button>
-          <Link>Criar conta</Link>
+          <LinkPage data-testid="signup" to="/signup">Criar conta</LinkPage>
           <FormStatus />
         </Form>
       </Context.Provider>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   display: flex;
@@ -49,7 +50,7 @@ export const Form = styled.form`
   box-shadow: 0 1px 3px -1px #000;
 `
 
-export const Link = styled.span`
+export const LinkPage = styled(Link)`
   text-align: center;
   color: ${p => p.theme.colors.primary};
   text-transform: lowercase;
