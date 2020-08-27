@@ -1,4 +1,6 @@
 import React from 'react'
+import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/components'
+import Context from '@/presentation/contexts/form/form-context'
 import {
   Container,
   Form,
@@ -6,8 +8,6 @@ import {
   Subtitle,
   LinkPage
 } from './signup-styles'
-import { LoginHeader, Footer, Input, FormStatus } from '@/presentation/components'
-import Context from '@/presentation/contexts/form/form-context'
 
 const Signup: React.FC = () => {
   return (
