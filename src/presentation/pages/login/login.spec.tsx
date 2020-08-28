@@ -20,6 +20,7 @@ type SutParms = {
 }
 
 const history = createMemoryHistory({ initialEntries: ['/login'] })
+
 const makeSut = (params?: SutParms): SutTypes => {
   const validationStub = new ValidationStub()
   const authenticationSpy = new AuthenticationSpy()
