@@ -1,7 +1,7 @@
 import React from 'react'
 import faker from 'faker'
 import { ThemeProvider } from 'styled-components'
-import { render, RenderResult, cleanup, fireEvent } from '@testing-library/react'
+import { render, RenderResult, cleanup } from '@testing-library/react'
 import theme from '@/presentation/styles/theme'
 import { Helper, ValidationStub } from '@/presentation/test'
 import Signup from './signup'
@@ -28,15 +28,6 @@ const makeSut = (params?: SutParms): SutTypes => {
   }
 }
 
-const populateField = (
-  sut: RenderResult,
-  fieldName: string,
-  value = faker.random.word()
-): void => {
-  const input = sut.getByTestId(fieldName)
-  fireEvent.input(input, { target: { value } })
-}
-
 describe('Signup Component', () => {
   afterEach(cleanup)
 
@@ -54,7 +45,7 @@ describe('Signup Component', () => {
   test('should show name error if validation fails', () => {
     const validationError = faker.random.words()
     const { sut } = makeSut({ validationError })
-    populateField(sut, 'name')
+    Helper.populateField(sut, 'name')
     Helper.testStatusForField(sut, 'name', validationError)
   })
 })
